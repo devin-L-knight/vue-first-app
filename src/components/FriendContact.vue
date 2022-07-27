@@ -46,6 +46,18 @@
                 // }
             }
         },
+        // emits is the counter part to props (these are custom events our component will at some point emmit) -- NOTE: can use an array or an object.
+        // emits: ['toggle-favorite'],
+        emits: {
+            'toggle-favorite': function(id) {
+                if (id) {
+                    return true;
+                } else {
+                    console.warn('ID is missing!');
+                    return false;
+                }
+            }
+        },
         data() {
             return {
                 detailsAreVisible: false,

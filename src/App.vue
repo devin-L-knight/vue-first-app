@@ -30,6 +30,12 @@
             name: 'Julie Jones',
             phone: '818-555-5522',
             email: 'julie-jones@localhost.com'
+          },
+          {
+            id: 'bob',
+            name: 'Bob Jones',
+            phone: '225-888-4554',
+            email: 'Bobby@email.com'
           }
         ],
       }

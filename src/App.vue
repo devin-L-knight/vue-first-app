@@ -3,17 +3,12 @@
     <header><h1>My Friends</h1></header>
     <ul>
       <friend-contact
-        id='manuel'
-        name='Manuel Lorenz'
-        phone-number='310-555-5555'
-        email-address='manuel@localhost.com'
+        v-for="friend in friends"
+        :key='friend.id'
+        :name='friend.name'
+        :phone-number='friend.phone'
+        :email-address='friend.email'
         v-bind:is-favorite="true"
-      ></friend-contact>
-      <friend-contact
-        id='julie'
-        name='Julie Jones'
-        phone-number='818-555-5522'
-        email-address='julie-jones@localhost.com'
       ></friend-contact>
     </ul>
   </section>
@@ -24,18 +19,18 @@
     data() {
       return {
         friends: [
-          // {
-          //   id: 'manuel',
-          //   name: 'Manuel Lorenz',
-          //   phone: '310-555-5555',
-          //   email: 'manuel@localhost.com'
-          // },
-          // {
-          //   id: 'julie',
-          //   name: 'Julie Jones',
-          //   phone: '818-555-5522',
-          //   email: 'julie-jones@localhost.com'
-          // }
+          {
+            id: 'manuel',
+            name: 'Manuel Lorenz',
+            phone: '310-555-5555',
+            email: 'manuel@localhost.com'
+          },
+          {
+            id: 'julie',
+            name: 'Julie Jones',
+            phone: '818-555-5522',
+            email: 'julie-jones@localhost.com'
+          }
         ],
       }
     }

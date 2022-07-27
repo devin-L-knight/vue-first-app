@@ -7,8 +7,15 @@
         name='Manuel Lorenz'
         phone-number='310-555-5555'
         email-address='manuel@localhost.com'
+        is-favorite="1"
       ></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact
+        id='julie'
+        name='Julie Jones'
+        phone-number='818-555-5522'
+        email-address='julie-jones@localhost.com'
+        is-favorite="0"
+      ></friend-contact>
     </ul>
   </section>
 </template>
@@ -24,12 +31,12 @@
           //   phone: '310-555-5555',
           //   email: 'manuel@localhost.com'
           // },
-          {
-            id: 'julie',
-            name: 'Julie Jones',
-            phone: '818-555-5522',
-            email: 'julie-jones@localhost.com'
-          }
+          // {
+          //   id: 'julie',
+          //   name: 'Julie Jones',
+          //   phone: '818-555-5522',
+          //   email: 'julie-jones@localhost.com'
+          // }
         ],
       }
     }

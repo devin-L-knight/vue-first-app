@@ -13,6 +13,7 @@
         @toggle-favorite='toggleFavoriteStatus'
       ></friend-contact>
     </ul>
+    <new-friend-form></new-friend-form>
   </section>
 </template>
 
@@ -87,7 +88,7 @@
     list-style: none;
   }
 
-  #app li {
+  #app li, form {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     margin: 1rem auto;
     border-radius: 10px;

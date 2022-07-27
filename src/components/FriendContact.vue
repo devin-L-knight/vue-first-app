@@ -1,10 +1,10 @@
 <template>
     <li>
         <h2>{{ friend.name }}</h2>
-        <button @click="toggleDetails">Show Details</button>
+        <button @click="toggleDetails">{{ detailsAreVisible ? 'Hide Details' : 'Show Details' }}</button>
         <ul v-if="detailsAreVisible">
-            <li><strong>Phone:</strong>{{ friend.phone }}</li>
-            <li><strong>Email:</strong>{{ friend.email }}</li>
+            <li><strong>Phone:</strong> {{ friend.phone }}</li>
+            <li><strong>Email:</strong> {{ friend.email }}</li>
         </ul>
     </li>
 </template>

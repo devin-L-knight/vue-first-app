@@ -1,7 +1,7 @@
 <template>
   <section>
     <header><h1>My Friends</h1></header>
-    <new-friend-form></new-friend-form>
+    <new-friend-form @create-new-contact='addNewContact'></new-friend-form>
     <ul>
       <friend-contact
         v-for="friend in friends"
@@ -50,6 +50,20 @@
       toggleFavoriteStatus(friendId) {
         const locatedFriend = this.friends.find(friend => friend.id === friendId);
         locatedFriend.isFavorite = !locatedFriend.isFavorite;
+      },
+      addNewContact(formData) {
+        // console.log('add new contact called?', formData);
+
+        const newFriend = {
+          id: new Date().toISOString(), // this will provide a unique enough string to serve as our ID
+          name: formData.fullname,
+          phone: formData.phone,
+          email: formData.email,
+          isFavorite: false
+        }
+
+        // add our newly created Friend to our array of Friends.
+        this.friends.push(newFriend);
       }
     }
   }

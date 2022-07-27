@@ -1,6 +1,6 @@
 <template>
     <li>
-        <h2>{{ name }} {{ friendIsFavorite ? '(Favorite)' : '' }}</h2>
+        <h2>{{ name }} {{ isFavorite ? '(Favorite)' : '' }}</h2>
         <button @click="toggleFavorite">Toggle Favorite</button>
         <button @click="toggleDetails">{{ detailsAreVisible ? 'Hide Details' : 'Show Details' }}</button>
         <ul v-if="detailsAreVisible">
@@ -21,7 +21,10 @@
         //     'isFavorite'
         // ],
         props: {
-            id: String,
+            id: {
+                type: String,
+                required: true,
+            },
             name: {
                 type: String,
                 required: true,
@@ -53,7 +56,6 @@
                     // email: 'manuel@localhost.com'
                 },
                 // set a new data value to be equal to the passed prop value
-                friendIsFavorite: this.isFavorite
             }
         },
         methods: {
@@ -61,7 +63,9 @@
                 this.detailsAreVisible = !this.detailsAreVisible;
             },
             toggleFavorite() {
-                this.friendIsFavorite = !this.friendIsFavorite;
+                // use a built-in method that can be called inside our component (emits a custom event that we can listen to when it's run in our parent component...)
+                // this can take as many arguments as we want, but here we're passing the name of the event that's emitted as well as the id of the friend (is bound in the App.vue template where props are passed down)
+                this.$emit('toggle-favorite', this.id);
             }
         }
     }

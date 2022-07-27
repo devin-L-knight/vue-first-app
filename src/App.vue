@@ -1,6 +1,7 @@
 <template>
   <section>
     <header><h1>My Friends</h1></header>
+    <new-friend-form></new-friend-form>
     <ul>
       <friend-contact
         v-for="friend in friends"
@@ -13,7 +14,6 @@
         @toggle-favorite='toggleFavoriteStatus'
       ></friend-contact>
     </ul>
-    <new-friend-form></new-friend-form>
   </section>
 </template>
 

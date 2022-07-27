@@ -50,6 +50,13 @@
                 }
                 // console.log('FORM DATA >>>> ', submittedData);
                 this.$emit('create-new-contact', submittedData)
+
+                // clear the form fields by resetting everything to original state
+                this.enteredFirstName = '';
+                this.enteredLastName = '';
+                this.enteredFullName = '';
+                this.enteredPhone = '';
+                this.enteredEmail = '';
             }
         }
     }

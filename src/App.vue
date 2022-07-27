@@ -7,7 +7,7 @@
         name='Manuel Lorenz'
         phone-number='310-555-5555'
         email-address='manuel@localhost.com'
-        is-favorite="1"
+        v-bind:is-favorite="true"
       ></friend-contact>
       <friend-contact
         id='julie'

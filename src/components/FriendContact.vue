@@ -35,12 +35,12 @@
                 required: true,
             },
             isFavorite: {
-                type: String,
+                type: Boolean,
                 required: false,
-                default: '0', // (if not required, you can provide a default value that can be used. In our case, we'll set this default to '0')
-                validator: function(value) {
-                    return value === '1' || value === '0';
-                }
+                default: false, // (if not required, you can provide a default value that can be used. In our case, we'll set this default to '0')
+                // validator: function(value) {
+                //     return value === '1' || value === '0';
+                // }
             }
         },
         data() {

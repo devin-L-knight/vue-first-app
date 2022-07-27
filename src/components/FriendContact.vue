@@ -12,14 +12,37 @@
 
 <script>
     export default {
-        // our component can accept the props that have been passed in (accepted as an array)
-        props: [
-            'id',
-            'name',
-            'phoneNumber',
-            'emailAddress',
-            'isFavorite'
-        ],
+        // our component can accept the props that have been passed in (accepted as an array OR an object)
+        // props: [
+        //     'id',
+        //     'name',
+        //     'phoneNumber',
+        //     'emailAddress',
+        //     'isFavorite'
+        // ],
+        props: {
+            id: String,
+            name: {
+                type: String,
+                required: true,
+            },
+            phoneNumber: {
+                type: String,
+                required: true,
+            },
+            emailAddress: {
+                type: String,
+                required: true,
+            },
+            isFavorite: {
+                type: String,
+                required: false,
+                default: '0', // (if not required, you can provide a default value that can be used. In our case, we'll set this default to '0')
+                validator: function(value) {
+                    return value === '1' || value === '0';
+                }
+            }
+        },
         data() {
             return {
                 detailsAreVisible: false,

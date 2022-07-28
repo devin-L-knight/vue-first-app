@@ -107,7 +107,7 @@
         }
         console.log('NEW USER CREATED >>>> ', newUser);
 
-        // resetting the displayed user (just a test for restting data to the screen if I wanted to rework this instead of creating a new user)
+        // resetting the displayed user (just a test for resetting data to the screen if I wanted to rework this instead of creating a new user)
         this.user = {
           id: this.generateNewUserId(),
           name: data.userName,

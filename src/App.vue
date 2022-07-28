@@ -16,6 +16,12 @@
       ></friend-contact>
     </ul>
   </section>
+  <!-- Here we'll include a section that will render our components from assignment 1 -->
+  <section>
+    <header><h1>Assignment 1:</h1></header>
+    <active-user></active-user>
+    <user-data></user-data>
+  </section>
 </template>
 
 <script>

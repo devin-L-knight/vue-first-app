@@ -7,6 +7,7 @@
             <li><strong>Phone:</strong> {{ phoneNumber }}</li>
             <li><strong>Email:</strong> {{ emailAddress }}</li>
         </ul>
+        <button @click="deleteFriend()">Delete</button>
     </li>
 </template>
 
@@ -48,7 +49,8 @@
         },
         // emits is the counter part to props (these are custom events our component will at some point emmit) -- NOTE: can use an array or an object.
         // emits: ['toggle-favorite'],
-        emits: {
+        emits: [
+        {
             'toggle-favorite': function(id) {
                 if (id) {
                     return true;
@@ -58,6 +60,8 @@
                 }
             }
         },
+        'delete-friend'
+        ],
         data() {
             return {
                 detailsAreVisible: false,
@@ -78,6 +82,9 @@
                 // use a built-in method that can be called inside our component (emits a custom event that we can listen to when it's run in our parent component...)
                 // this can take as many arguments as we want, but here we're passing the name of the event that's emitted as well as the id of the friend (is bound in the App.vue template where props are passed down)
                 this.$emit('toggle-favorite', this.id);
+            },
+            deleteFriend() {
+                this.$emit('delete-friend', this.id);
             }
         }
     }

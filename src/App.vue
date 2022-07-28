@@ -12,6 +12,7 @@
         :email-address='friend.email'
         v-bind:is-favorite='friend.isFavorite'
         @toggle-favorite='toggleFavoriteStatus'
+        @delete-friend='removeFriendFromList'
       ></friend-contact>
     </ul>
   </section>
@@ -64,6 +65,13 @@
 
         // add our newly created Friend to our array of Friends.
         this.friends.push(newFriend);
+      },
+      removeFriendFromList(friendId) {
+        // reassign the array to a copy of itself with the friend filtered out by the id
+        this.friends = this.friends.filter((friend) => {
+          return friend.id !== friendId; // checking for non-equality, becase we want to keep friends with IDs that do not match what we want to remove
+        })
+
       }
     }
   }

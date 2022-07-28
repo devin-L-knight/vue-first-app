@@ -16,6 +16,26 @@
       ></friend-contact>
     </ul>
   </section>
+  <!-- Here we'll include a section that will render our components from assignment 1 -->
+  <section class="assignment-section">
+    <header>
+      <h1>Assignment 1:</h1>
+      <div class="assignment-objectives">
+        <ol>Create two new components</ol>
+        <ol>Output the components with each other on the screen</ol>
+        <ol>practice passing down props & using custom emitters to update rendered data</ol>
+      </div>
+    </header>
+      <!-- v-for="user in users" -->
+    <active-user
+      :userId="user.id"
+      :userName="user.name"
+      :userAge="user.age"
+    ></active-user>
+    <user-data
+      @create-new-user='addNewUser'
+    ></user-data>
+  </section>
 </template>
 
 <script>
@@ -45,6 +65,13 @@
             isFavorite: false
           }
         ],
+        // users: [
+          user: {
+            id: 44,
+            name: 'name example',
+            age: 34
+          }
+        // ]
       }
     },
     methods: {
@@ -65,6 +92,7 @@
 
         // add our newly created Friend to our array of Friends.
         this.friends.push(newFriend);
+
       },
       removeFriendFromList(friendId) {
         // reassign the array to a copy of itself with the friend filtered out by the id
@@ -72,7 +100,28 @@
           return friend.id !== friendId; // checking for non-equality, becase we want to keep friends with IDs that do not match what we want to remove
         })
 
+      },
+      // create a new method to generate a new user ID:
+      generateNewUserId() {
+        let newId = Math.floor(Math.random() * 1000) + 1;
+        return newId
+      },
+      addNewUser(data) {
+        const newUser = {
+            id: this.generateNewUserId(),
+            name: data.userName,
+            age: data.userAge
+        }
+        console.log('NEW USER CREATED >>>> ', newUser);
+
+        // resetting the displayed user (just a test for resetting data to the screen if I wanted to rework this instead of creating a new user)
+        this.user = {
+          id: this.generateNewUserId(),
+          name: data.userName,
+          age: data.userAge
+        }
       }
+
     }
   }
 </script>
@@ -142,5 +191,19 @@
     background-color: #ec3169;
     border-color: #ec3169;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+  }
+
+  .assignment-section {
+    align-items: center;
+    border-top: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+
+  .assignment-objectives {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
   }
 </style>

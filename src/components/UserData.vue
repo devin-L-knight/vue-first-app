@@ -14,7 +14,8 @@ export default {
             inputUserName: '',
             inputUserAge: 0
         }
-    }, 
+    },
+    emits: ['create-new-user'],
     methods: {
         submitForm() {
         // create a new object with the submitted data

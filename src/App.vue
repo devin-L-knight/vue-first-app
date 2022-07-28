@@ -18,7 +18,14 @@
   </section>
   <!-- Here we'll include a section that will render our components from assignment 1 -->
   <section class="assignment-section">
-    <header><h1>Assignment 1:</h1></header>
+    <header>
+      <h1>Assignment 1:</h1>
+      <div class="assignment-objectives">
+        <ol>Create two new components</ol>
+        <ol>Output the components with each other on the screen</ol>
+        <ol>practice passing down props & using custom emitters to update rendered data</ol>
+      </div>
+    </header>
       <!-- v-for="user in users" -->
     <active-user
       :userId="user.id"
@@ -192,5 +199,11 @@
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
+  }
+
+  .assignment-objectives {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
   }
 </style>

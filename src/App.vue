@@ -17,7 +17,7 @@
     </ul>
   </section>
   <!-- Here we'll include a section that will render our components from assignment 1 -->
-  <section>
+  <section class="assignment-section">
     <header><h1>Assignment 1:</h1></header>
     <active-user></active-user>
     <user-data></user-data>
@@ -148,5 +148,13 @@
     background-color: #ec3169;
     border-color: #ec3169;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+  }
+
+  .assignment-section {
+    align-items: center;
+    border-top: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
   }
 </style>
